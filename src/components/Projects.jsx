@@ -95,6 +95,13 @@ const TechTag = styled.span`
 
 const projects = [
   {
+    title: 'Healthchain',
+    description: "This is a decentralized healthcare system that leverages AI for predictive healthcare analytics while ensuring data privacy and security through Zero-Knowledge Proofs (ZKP) on the Aleph Zero blockchain. This system enables patients to control their health data, allows secure access for medical professionals, and ensures AI-driven disease risk prediction while preserving privacy.",
+    tech: ["React", "Typescript","Aleph Zero","Pinata IPFS","Tailwind CSS","Solidity"],
+    github: 'https://github.com/chegisreya/HealthDapp_Azero',
+    demo: 'https://health-dapp-azero.vercel.app/'
+  },
+  {
     title: 'Touch Be Safe',
     description: 'A personal safety device that sends emergency alerts to family, police, and hospitals. Exploring IoT and Cloud integration for real-time emergency response.',
     tech: ['IoT', 'Cloud', 'Android', 'Java'],
