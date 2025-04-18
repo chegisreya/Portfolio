@@ -175,7 +175,7 @@ const About = () => {
           <p>
             Always open to internships, collabs, and tech convos. Let's build something awesome together!
           </p>
-          <p>Technologies I've been vibing with lately:</p>
+          <p>Technologies I'm familiar with:</p>
           <SkillsList
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
