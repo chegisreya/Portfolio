@@ -44,57 +44,57 @@ const TextContent = styled(motion.div)`
 `
 
 const Greeting = styled(motion.h1)`
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   color: var(--primary);
-  margin-bottom: 1rem;
+  margin-bottom: 0.8rem;
   font-weight: 500;
 
   @media (max-width: 768px) {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
 `
 
 const Name = styled(motion.h2)`
-  font-size: 4rem;
+  font-size: 3rem;
   font-weight: 700;
-  margin-bottom: 1rem;
+  margin-bottom: 0.8rem;
   background: var(--gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   line-height: 1.2;
 
   @media (max-width: 968px) {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
 
   @media (max-width: 480px) {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 `
 
 const Title = styled(motion.h3)`
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: var(--text-secondary);
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.2rem;
   font-weight: 600;
 
   @media (max-width: 968px) {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
   }
 
   @media (max-width: 480px) {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
 `
 
 const Description = styled(motion.p)`
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: var(--text-secondary);
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   line-height: 1.6;
 
   @media (max-width: 768px) {
-    font-size: 1rem;
+    font-size: 0.95rem;
   }
 `
 
@@ -114,7 +114,7 @@ const ImageContainer = styled(motion.div)`
 
 const ProfileImage = styled.img`
   width: 100%;
-  max-width: 400px;
+  max-width: 280px;
   height: auto;
   border-radius: 20px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
@@ -125,7 +125,11 @@ const ProfileImage = styled.img`
   }
 
   @media (max-width: 968px) {
-    max-width: 300px;
+    max-width: 240px;
+  }
+
+  @media (max-width: 480px) {
+    max-width: 220px;
   }
 `
 
