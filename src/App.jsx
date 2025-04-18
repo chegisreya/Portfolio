@@ -22,25 +22,10 @@ const Nav = styled.nav`
   top: 0;
   width: 100%;
   padding: 1rem 2rem;
-  background: var(--background);
-  border-bottom: 4px solid var(--primary);
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
   z-index: 100;
-
-  &::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    background: repeating-linear-gradient(
-      to right,
-      var(--primary) 0,
-      var(--primary) 5px,
-      transparent 5px,
-      transparent 10px
-    );
-  }
 `
 
 const NavContent = styled.div`
@@ -52,15 +37,12 @@ const NavContent = styled.div`
 `
 
 const Logo = styled(motion.div)`
-  font-family: 'Press Start 2P', cursive;
-  font-size: 1.2rem;
-  color: var(--primary);
-  text-shadow: var(--pixel-border);
+  font-size: 1.5rem;
+  font-weight: 700;
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   padding: 0.5rem;
-
-  &:hover {
-    color: var(--accent);
-  }
 `
 
 const NavLinks = styled(motion.div)`
@@ -74,10 +56,9 @@ const NavLinks = styled(motion.div)`
     top: 100%;
     left: 0;
     right: 0;
-    background: var(--background);
+    background: rgba(255, 255, 255, 0.95);
     padding: 1rem;
-    border: 4px solid var(--primary);
-    border-top: none;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     
     ${props => props.isOpen && `
       display: flex;
@@ -86,31 +67,52 @@ const NavLinks = styled(motion.div)`
 `
 
 const NavLink = styled.a`
-  font-family: 'Press Start 2P', cursive;
   color: var(--text-primary);
   text-decoration: none;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
+  font-weight: 500;
   transition: all 0.3s ease;
   position: relative;
   padding: 0.5rem;
-
-  &:hover {
-    color: var(--accent);
-    transform: scale(1.1);
-  }
+  display: flex;
+  align-items: center;
+  gap: 4px;
 
   &::before {
-    content: '>';
+    content: '→';
     position: absolute;
-    left: -1rem;
+    left: -20px;
     opacity: 0;
+    transform: translateX(-10px);
     transition: all 0.3s ease;
-    color: var(--primary);
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 
-  &:hover::before {
-    opacity: 1;
-    transform: translateX(0.5rem);
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--gradient);
+    transition: width 0.3s ease;
+  }
+
+  &:hover {
+    color: var(--primary);
+    transform: translateX(20px);
+    
+    &::before {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    
+    &::after {
+      width: 100%;
+    }
   }
 `
 
@@ -122,15 +124,13 @@ const MenuButton = styled.button`
   font-size: 1.5rem;
   cursor: pointer;
   padding: 0.5rem;
-  z-index: 101;
 
   @media (max-width: 768px) {
     display: block;
   }
 
   &:hover {
-    color: var(--accent);
-    transform: scale(1.1);
+    color: var(--secondary);
   }
 `
 

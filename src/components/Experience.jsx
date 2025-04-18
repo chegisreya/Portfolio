@@ -10,20 +10,25 @@ const ExperienceSection = styled.section`
 `
 
 const SectionTitle = styled(motion.h2)`
-  font-size: 2rem;
-  color:rgb(59, 0, 137);
+   font-family: 'Poppins', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--primary);
   margin-bottom: 3rem;
   position: relative;
-  display: inline-block;
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 
   &::after {
     content: '';
     position: absolute;
-    bottom: -5px;
+    bottom: -10px;
     left: 0;
-    width: 100px;
-    height: 2px;
+    width: 60px;
+    height: 4px;
     background: var(--gradient);
+    border-radius: 2px;
   }
 `
 

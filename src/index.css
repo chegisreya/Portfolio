@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 * {
   margin: 0;
@@ -12,16 +11,12 @@
   --primary: #6366f1;
   --secondary: #8b5cf6;
   --accent: #ec4899;
-  --background: #ffffff;
+  --background: linear-gradient(90deg, #feffe9 0%, #ffeafc 100%);
   --text-primary: #1e293b;
   --text-secondary: #64748b;
-  --card-bg: #f8fafc;
+  --card-bg: rgba(255, 255, 255, 0.8);
   --gradient: linear-gradient(135deg, var(--primary), var(--secondary), var(--accent));
-  --pixel-border: 
-    -3px -3px 0 #000,  
-     3px -3px 0 #000,
-    -3px  3px 0 #000,
-     3px  3px 0 #000;
+  --pixel-border: -3px -3px 0 #000, 3px -3px 0 #000, -3px 3px 0 #000, 3px 3px 0 #000;
 }
 
 @font-face {
@@ -32,16 +27,17 @@
 }
 
 body {
-  font-family: 'VT323', monospace;
+  font-family: 'Poppins', sans-serif;
   background: var(--background);
   color: var(--text-primary);
   line-height: 1.6;
-  font-size: 23px;
+  font-size: 16px;
   overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Press Start 2P', cursive;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
   line-height: 1.4;
   margin: 1em 0;
 }
@@ -58,47 +54,44 @@ a:hover {
 }
 
 button {
-  font-family: 'Press Start 2P', cursive;
+  font-family: 'Poppins', sans-serif;
   cursor: pointer;
   padding: 0.5em 1em;
   background: var(--primary);
   border: none;
-  color: var(--text-primary);
-  text-transform: uppercase;
+  color: white;
+  font-weight: 500;
   transition: all 0.3s ease;
-  border: 4px solid #000;
-  box-shadow: 4px 4px 0 #000;
+  border-radius: 8px;
 }
 
 button:hover {
-  transform: translate(2px, 2px);
-  box-shadow: 2px 2px 0 #000;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.2);
 }
 
 /* Scrollbar Styles */
 ::-webkit-scrollbar {
-  width: 12px;
+  width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--background);
-  border-left: 2px solid var(--primary);
+  background: var(--card-bg);
 }
 
 ::-webkit-scrollbar-thumb {
   background: var(--primary);
-  border: 2px solid #000;
+  border-radius: 6px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--accent);
+  background: var(--secondary);
 }
 
 /* Selection Styles */
 ::selection {
   background: var(--primary);
-  color: var(--text-primary);
-  text-shadow: 2px 2px #000;
+  color: white;
 }
 
 /* Pixel Border Animation */

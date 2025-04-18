@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import { FaCode, FaMobile, FaDatabase, FaTools, FaPaintBrush, FaBusinessTime, FaUsers, FaGlobe } from 'react-icons/fa'
+import { FaCode, FaMobile, FaDatabase, FaTools, FaPaintBrush, FaBusinessTime, FaUsers, FaGlobe, FaCloud } from 'react-icons/fa'
 
 const SkillsSection = styled.section`
   padding: 6rem 2rem;
@@ -10,20 +10,22 @@ const SkillsSection = styled.section`
 `
 
 const SectionTitle = styled(motion.h2)`
-  font-family: 'Press Start 2P', cursive;
-  font-size: 2rem;
+   font-family: 'Poppins', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
   color: var(--primary);
   margin-bottom: 3rem;
   position: relative;
-  display: inline-block;
-  text-shadow: var(--pixel-border);
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 
   &::after {
     content: '';
     position: absolute;
     bottom: -10px;
     left: 0;
-    width: 120px;
+    width: 60px;
     height: 4px;
     background: var(--gradient);
     border-radius: 2px;
@@ -65,10 +67,10 @@ const CategoryIcon = styled.div`
 `
 
 const CategoryTitle = styled.h3`
-  font-family: 'Press Start 2P', cursive;
+  font-family: 'Poppins', sans-serif;
   color: var(--primary);
   margin: 0;
-  font-size: 0.9rem;
+  font-size: 1 rem;
   line-height: 1.4;
   word-break: break-word;
 `
@@ -125,6 +127,11 @@ const skillCategories = [
     title: 'Business & Management',
     icon: <FaBusinessTime />,
     skills: ['Business Planning', 'Fundraising', 'HR', 'Project Management']
+  },
+  {
+    title: 'Cloud',
+    icon: <FaCloud />,
+    skills: ['AWS', 'Azure', 'GCP']
   },
   {
     title: 'Soft Skills',

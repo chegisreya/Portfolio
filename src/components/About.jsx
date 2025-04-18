@@ -1,13 +1,7 @@
-import styled, { keyframes } from 'styled-components'
+import styled from 'styled-components'
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import avatar from '../assets/bgsreya.jpg' // make sure this path matches your structure
-
-const float = keyframes`
-  0% { transform: translateY(0px) translateX(0px); }
-  50% { transform: translateY(-20px) translateX(10px); }
-  100% { transform: translateY(0px) translateX(0px); }
-`
+import collage from '../assets/collage.jpg'
 
 const AboutSection = styled.section`
   padding: 6rem 2rem;
@@ -17,39 +11,25 @@ const AboutSection = styled.section`
   position: relative;
   overflow: hidden;
   background: var(--background);
-  border-left: 5px solid var(--primary);
-
-  &::after {
-    content: '';
-    position: absolute;
-    top: 20%;
-    right: 10%;
-    width: 300px;
-    height: 300px;
-    background: radial-gradient(circle, rgba(99, 102, 241, 0.1), transparent);
-    border-radius: 50%;
-    animation: ${float} 8s ease-in-out infinite;
-    z-index: -2;
-    filter: blur(60px);
-  }
 `
 
 const SectionTitle = styled(motion.h2)`
-  font-family: 'Press Start 2P', cursive;
-  font-size: 2rem;
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
   color: var(--primary);
-  margin-bottom: 2rem;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  text-shadow: var(--pixel-border);
+  margin-bottom: 3rem;
+  position: relative;
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 
   &::after {
     content: '';
     position: absolute;
     bottom: -10px;
     left: 0;
-    width: 120px;
+    width: 60px;
     height: 4px;
     background: var(--gradient);
     border-radius: 2px;
@@ -57,40 +37,51 @@ const SectionTitle = styled(motion.h2)`
 `
 
 const SplitLayout = styled.div`
-  display: flex;
-  gap: 2rem;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
   max-width: 1200px;
+  width: 100%;
+  align-items: center;
+
+  @media (max-width: 968px) {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
 `
 
-const AvatarImage = styled.img`
-  width: 250px;
-  border: 4px solid var(--primary);
-  box-shadow: 8px 8px 0 rgba(99, 102, 241, 0.3);
-  image-rendering: pixelated;
+const ImageContainer = styled.div`
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+`
+
+const AboutImage = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.05);
+  }
 `
 
 const AboutText = styled(motion.div)`
   color: var(--text-secondary);
-  font-family: 'VT323', monospace;
-  font-size: 1.3rem;
-  line-height: 1.6;
-  background: var(--card-bg);
-  padding: 2rem;
-  border-radius: 4px;
-  max-width: 600px;
-  border: 4px solid var(--primary);
-  box-shadow: 8px 8px 0 rgba(99, 102, 241, 0.3);
-
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  
   p {
     margin-bottom: 1.2rem;
   }
 
   strong {
     color: var(--primary);
-    text-shadow: 2px 2px rgba(99, 102, 241, 0.2);
+    font-weight: 600;
   }
 `
 
@@ -109,8 +100,8 @@ const Skill = styled.div`
   background: var(--card-bg);
   padding: 0.8rem 1rem;
   border: 3px solid var(--primary);
-  font-family: 'Press Start 2P', cursive;
-  font-size: 0.65rem;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1 rem;
   line-height: 1.2;
   color: var(--primary);
   transition: all 0.3s ease;
@@ -153,13 +144,20 @@ const About = () => {
         animate={inView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.6 }}
       >
-        💻 About Me
+        About Me
       </SectionTitle>
-
       <SplitLayout>
-        <AvatarImage src={avatar} alt="My avatar" />
+        <ImageContainer>
+          <AboutImage 
+            src={collage} 
+            alt="About Me Collage"
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={inView ? { opacity: 1, scale: 1 } : {}}
+            transition={{ duration: 0.6 }}
+          />
+        </ImageContainer>
         <AboutText
-          initial={{ opacity: 0, x: -20 }}
+          initial={{ opacity: 0, x: 20 }}
           animate={inView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
@@ -170,12 +168,12 @@ const About = () => {
             Outside the classroom, I dive into <strong>hackathons</strong>, building cool stuff with friends, and solving problems under pressure.
           </p>
           <p>
-            I'm also a <strong>Kuchipudi dancer</strong> and a <strong>National Cadet Corps</strong> cadet — where I balance discipline and art with passion.
+            I'm also a <strong>Kuchipudi dancer</strong> and a member of the <strong>National Cadet Corps</strong> — where I balance discipline and art with passion.
           </p>
           <p>
             Always open to internships, collabs, and tech convos. Let's build something awesome together!
           </p>
-          <p>Technologies I'm familiar with:</p>
+          <p>Tech I'm familiar with:</p>
           <SkillsList
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}

@@ -38,42 +38,14 @@ const HeroContent = styled.div`
 const ProfileImage = styled(motion.img)`
   margin-top: 100px;
   margin-right: 100px;
-  width: 359px;
-  height: 400px;
-  border: 4px solid var(--primary);
-  position: relative;
-  box-shadow: 8px 8px 0 rgba(99, 102, 241, 0.3);
+  width: 240px;
+  height: 450px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
 
-  &::after {
-    content: '';
-    position: absolute;
-    bottom: -8px;
-    left: -4px;
-    width: calc(100% + 8px);
-    height: 4px;
-    background: repeating-linear-gradient(
-      to right,
-      var(--primary) 0,
-      var(--primary) 5px,
-      transparent 5px,
-      transparent 10px
-    );
-  }
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: -4px;
-    right: -8px;
-    height: calc(100% + 8px);
-    width: 4px;
-    background: repeating-linear-gradient(
-      to bottom,
-      var(--primary) 0,
-      var(--primary) 5px,
-      transparent 5px,
-      transparent 10px
-    );
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
   }
 `
 
@@ -84,7 +56,7 @@ const Greeting = styled(motion.div)`
 `
 
 const Name = styled(motion.h1)`
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: 700;
   margin: 0;
   background: var(--gradient);
@@ -97,7 +69,7 @@ const Name = styled(motion.h1)`
 `
 
 const Title = styled(motion.h2)`
-  font-size: 1rem;
+  font-size: 2rem;
   color: var(--text-secondary);
   margin: 0;
 
@@ -125,32 +97,16 @@ const SocialLink = styled.a`
   transition: all 0.3s ease;
   padding: 0.8rem;
   background: var(--card-bg);
-  border: 3px solid var(--primary);
-  box-shadow: 4px 4px 0 rgba(99, 102, 241, 0.3);
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 
   &:hover {
-    color: var(--accent);
-    transform: translate(-2px, -2px);
-    box-shadow: 6px 6px 0 rgba(99, 102, 241, 0.3);
-  }
-
-  &::after {
-    content: '';
-    position: absolute;
-    bottom: -4px;
-    left: -2px;
-    width: calc(100% + 4px);
-    height: 2px;
-    background: repeating-linear-gradient(
-      to right,
-      var(--primary) 0,
-      var(--primary) 3px,
-      transparent 3px,
-      transparent 6px
-    );
+    color: var(--secondary);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(99, 102, 241, 0.2);
   }
 `
 
