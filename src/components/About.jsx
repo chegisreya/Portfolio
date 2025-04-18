@@ -170,7 +170,7 @@ const About = () => {
             Outside the classroom, I dive into <strong>hackathons</strong>, building cool stuff with friends, and solving problems under pressure.
           </p>
           <p>
-            I'm also a <strong>Kuchipudi dancer</strong> and a member of the <strong>National Cadet Corps</strong> — where I balance discipline and art with passion.
+            I'm also a <strong>Kuchipudi dancer</strong> and a <strong>National Cadet Corps</strong> cadet — where I balance discipline and art with passion.
           </p>
           <p>
             Always open to internships, collabs, and tech convos. Let's build something awesome together!
