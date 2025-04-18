@@ -182,7 +182,7 @@ const About = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
           >
             <Skill>Java</Skill>
-            <Skill>Android</Skill>
+            <Skill>Cloud Computing</Skill>
             <Skill>Python</Skill>
             <Skill>React</Skill>
             <Skill>JavaScript</Skill>
@@ -190,7 +190,6 @@ const About = () => {
             <Skill>Git</Skill>
             <Skill>Figma</Skill>
           </SkillsList>
-          <FlavorText>"Can debug in 3 languages, and choreograph a dance in 1 😄"</FlavorText>
         </AboutText>
       </SplitLayout>
     </AboutSection>
