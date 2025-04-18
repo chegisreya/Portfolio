@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  image-rendering: pixelated;
+}
+
+:root {
+  --primary: #6366f1;
+  --secondary: #8b5cf6;
+  --accent: #ec4899;
+  --background: #ffffff;
+  --text-primary: #1e293b;
+  --text-secondary: #64748b;
+  --card-bg: #f8fafc;
+  --gradient: linear-gradient(135deg, var(--primary), var(--secondary), var(--accent));
+  --pixel-border: 
+    -3px -3px 0 #000,  
+     3px -3px 0 #000,
+    -3px  3px 0 #000,
+     3px  3px 0 #000;
+}
+
+@font-face {
+  font-family: 'CustomFont';
+  src: url('./assets/Lmroman9Bold-nRmpR.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: 'VT323', monospace;
+  background: var(--background);
+  color: var(--text-primary);
+  line-height: 1.6;
+  font-size: 23px;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Press Start 2P', cursive;
+  line-height: 1.4;
+  margin: 1em 0;
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary);
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  color: var(--accent);
+}
+
+button {
+  font-family: 'Press Start 2P', cursive;
+  cursor: pointer;
+  padding: 0.5em 1em;
+  background: var(--primary);
+  border: none;
+  color: var(--text-primary);
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  border: 4px solid #000;
+  box-shadow: 4px 4px 0 #000;
+}
+
+button:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 #000;
+}
+
+/* Scrollbar Styles */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+  border-left: 2px solid var(--primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border: 2px solid #000;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+/* Selection Styles */
+::selection {
+  background: var(--primary);
+  color: var(--text-primary);
+  text-shadow: 2px 2px #000;
+}
+
+/* Pixel Border Animation */
+@keyframes borderBlink {
+  0% { border-color: var(--primary); }
+  50% { border-color: var(--accent); }
+  100% { border-color: var(--primary); }
+}
+
+.pixel-border {
+  border: 4px solid var(--primary);
+  animation: borderBlink 2s infinite;
+}
