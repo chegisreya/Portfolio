@@ -191,7 +191,7 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 1 }}
         >
-          <SocialLink href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">
+          <SocialLink href="https://github.com/chegisreya" target="_blank" rel="noopener noreferrer">
             <FaGithub />
           </SocialLink>
           <SocialLink href="https://www.linkedin.com/in/chegireddy-sreya-0a120225a" target="_blank" rel="noopener noreferrer">
