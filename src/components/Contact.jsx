@@ -5,8 +5,16 @@ import { FaEnvelope, FaMapMarkerAlt, FaPhone } from 'react-icons/fa'
 
 const ContactSection = styled.section`
   padding: 6rem 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  background: var(--background);
+
+  @media (max-width: 768px) {
+    padding: 4rem 1rem;
+  }
 `
 
 const SectionTitle = styled(motion.h2)`
@@ -20,15 +28,9 @@ const SectionTitle = styled(motion.h2)`
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 
-  &::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 0;
-    width: 60px;
-    height: 4px;
-    background: var(--gradient);
-    border-radius: 2px;
+  @media (max-width: 768px) {
+    font-size: 2rem;
+    margin-bottom: 2rem;
   }
 `
 
@@ -36,37 +38,99 @@ const ContactContent = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
+  max-width: 1200px;
+  width: 100%;
 
-  @media (max-width: 768px) {
+  @media (max-width: 968px) {
     grid-template-columns: 1fr;
+    gap: 2rem;
   }
 `
 
 const ContactInfo = styled(motion.div)`
-  h3 {
-    color:rgb(134, 14, 255);
-    margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  @media (max-width: 968px) {
+    order: 2;
   }
 `
 
-const ContactItem = styled.div`
+const ContactItem = styled(motion.div)`
   display: flex;
   align-items: center;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
-  font-size: 2rem;
-  color:rgb(0, 0, 0);
+  gap: 1.5rem;
+  padding: 1.5rem;
+  background: var(--card-bg);
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+
+  @media (max-width: 480px) {
+    padding: 1rem;
+    gap: 1rem;
+  }
 `
 
 const ContactIcon = styled.div`
-  color:rgb(0, 0, 0);
-  font-size: 1.2rem;
+  font-size: 1.5rem;
+  color: var(--primary);
+  background: rgba(99, 102, 241, 0.1);
+  padding: 1rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media (max-width: 480px) {
+    font-size: 1.2rem;
+    padding: 0.8rem;
+  }
+`
+
+const ContactText = styled.div`
+  h3 {
+    font-size: 1.2rem;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    color: var(--text-secondary);
+    font-size: 1rem;
+  }
+
+  @media (max-width: 480px) {
+    h3 {
+      font-size: 1rem;
+    }
+    p {
+      font-size: 0.9rem;
+    }
+  }
 `
 
 const ContactForm = styled(motion.form)`
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  background: var(--card-bg);
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+
+  @media (max-width: 968px) {
+    order: 1;
+  }
+
+  @media (max-width: 480px) {
+    padding: 1.5rem;
+  }
 `
 
 const FormGroup = styled.div`
@@ -76,53 +140,77 @@ const FormGroup = styled.div`
 `
 
 const Label = styled.label`
-  color:rgb(87, 0, 141);
-  font-size: 2rem;
+  color: var(--text-primary);
+  font-size: 1rem;
+  font-weight: 500;
 `
 
 const Input = styled.input`
-  padding: 0.8rem;
-  background-color: #112240;
-  border: 1px solid #233554;
-  border-radius: 4px;
-  color:rgb(251, 251, 251);
+  padding: 0.8rem 1rem;
+  border: 2px solid rgba(99, 102, 241, 0.2);
+  border-radius: 8px;
   font-size: 1rem;
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.8);
+  transition: all 0.3s ease;
 
   &:focus {
     outline: none;
-    border-color:rgb(0, 0, 0);
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+  }
+
+  @media (max-width: 480px) {
+    padding: 0.7rem 0.9rem;
+    font-size: 0.9rem;
   }
 `
 
 const TextArea = styled.textarea`
-  padding: 0.8rem;
-  background-color: #112240;
-  border: 1px solid #233554;
-  border-radius: 4px;
-  color: #ccd6f6;
+  padding: 0.8rem 1rem;
+  border: 2px solid rgba(99, 102, 241, 0.2);
+  border-radius: 8px;
   font-size: 1rem;
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.8);
   min-height: 150px;
   resize: vertical;
+  transition: all 0.3s ease;
 
   &:focus {
     outline: none;
-    border-color:rgb(0, 0, 0);
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+  }
+
+  @media (max-width: 480px) {
+    padding: 0.7rem 0.9rem;
+    font-size: 0.9rem;
+    min-height: 120px;
   }
 `
 
-const SubmitButton = styled.button`
-  background-color: transparent;
-  color:rgb(0, 0, 0);
-  border: 5px solid rgb(0, 0, 0);
-  padding: 0.8rem 1.5rem;
-  border-radius: 4px;
+const SubmitButton = styled(motion.button)`
+  padding: 1rem 2rem;
+  background: var(--gradient);
+  color: white;
+  border: none;
+  border-radius: 8px;
   font-size: 1rem;
+  font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
   align-self: flex-start;
 
   &:hover {
-    background-color: rgba(100, 255, 218, 0.1);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  @media (max-width: 480px) {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.9rem;
+    width: 100%;
   }
 `
 
