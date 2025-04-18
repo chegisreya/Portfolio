@@ -127,13 +127,7 @@ const projects = [
     github: '#',
     demo: '#'
   },
-  {
-    title: 'MCmode',
-    description: 'Developed a prompt-based app for OMI App Hackathon, focusing on user experience and functionality.',
-    tech: ['Android', 'Java', 'UI/UX'],
-    github: '#',
-    demo: '#'
-  }
+
 ]
 
 const Projects = () => {
